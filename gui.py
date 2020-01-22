@@ -1,13 +1,17 @@
 from tkinter import *
+import system
 
 def initLabels(window):
-    lbl = Label(window, text="Hello", font=("Arial Bold", 20)) 
+    lbl = Label(window, text="PO System", font=("Arial Bold", 12)) 
     lbl.grid(column=0, row=0)
 
 def initButtons(window):
-    btn = Button(window, text="Click Me", font=("Arial Bold", 20))
-    btn.grid(column=1, row=0)
+    generatePOButton = Button(window, text="Generate PO", font=("Arial Bold", 12), command=buttonCallback)
+    generatePOButton.grid(column=1, row=0)
 
+def buttonCallback():
+    system.generatePO()
+    
 def main():
     window = Tk()
     window.title("PO System")
